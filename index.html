@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Nametag</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+KR:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-text">
+        <p>Make</p>
+        <p>Your Own</p>
+        <p>Nametag</p>
+    </div>
+
+    <div class="rotate-circle rotatee">
+        <p>letter</p>
+    </div>
+    <div class="rotate-star rotatee">
+        <p>nickname</p>
+    </div>
+    <div class="text-display-container">
+        <div id="text-display">Here is your text.</div>
+    </div>
+    
+    <div class="controls">
+        <div class="controls-text">
+            <p class="rrr">unique identity/</p>
+            <p class="rrr">your colors</p>
+            <p class="nnn">you can download<br>png files</p>
+
+        </div>
+        <div class="control-item">
+            <label for="text-input">Input your text:</label>
+            <input type="text" id="text-input" placeholder="Input your text">
+        </div>
+        
+        <div class="control-item">
+            <label for="font-size">Text size:</label>
+            <input type="range" id="font-size" min="10" max="200" value="55" class="slider">
+        </div>
+
+        <div class="control-item">
+            <label for="letter-spacing">Letter spacing:</label>
+            <input type="range" id="letter-spacing" min="-5" max="10" value="0" class="slider">
+        </div>
+
+        <div class="control-item">
+            <label for="color">Text color:</label>
+            <input type="color" id="color" value="#000000">
+        </div>
+
+        <div class="control-item">
+            <label for="background-color">Background color:</label>
+            <input type="color" id="background-color" value="#ffffff">
+        </div>
+    </div>
+    
+    <div class="namelabel-container">
+        <button id="popup-button">Expand</button>
+        <div class="nametag">
+            <p id="nametag-text">Here is your text.</p>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content" id="capture">
+            <span class="close-button">&times;</span>
+            <div class="popup-nametag">
+                <div class="nametag2">
+                    <p id="nametag-text">Here is your text.</p>
+                </div>
+                <div class="button-container">
+                    <button id="background-button">Change Background</button>
+                    <button id="save-button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

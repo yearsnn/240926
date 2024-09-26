@@ -1,0 +1,449 @@
+body {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+}
+
+.text-display-container {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.rotate-circle{
+    background-color: yellow;
+    color: red;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    text-align: center;
+    rotate: -20deg;
+    font-size: 2rem;
+}
+
+.rotate-circle p{
+    transform: translate(0, -25px);
+}
+.rotate-star{
+    background-color: yellow;
+    color: red;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    text-align: center;
+    rotate: -20deg;
+    font-size: 2rem;
+}
+
+.rotate-star p{
+    transform: translate(0, -25px);
+}
+
+.rotatee{
+    animation: rotate-axis infinite 1s;
+}
+@keyframes rotate-axis {
+    from {
+        transform: perspective(800px) rotateX(0deg);
+    }
+    to {
+        transform: perspective(800px) rotateX(360deg);
+    }
+}
+
+.main-text{
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    width: 100vw;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.main-text p{
+    padding: 0vh 2vw 1vh 2vw;
+    margin-bottom: 2px;
+    margin-top: 1vh;
+
+}
+
+#text-display {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 35vh;
+    width: 80vw;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-size: 500%;
+    font-family: "Instrument Serif", serif;
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: transparent;
+    box-shadow: none;
+    font-family: NotoSansKR;
+    font-style: normal;
+    
+}
+
+.controls-text{ 
+    transform: translate(-240px, 110px);
+    color: red;
+}
+
+.rrr{
+    font-family: "Instrument Serif";
+    font-style: italic;
+    font-size: 1.8rem;
+    line-height: 0.4rem;
+    padding-bottom: 3px;
+}
+
+.nnn{
+    font-family: NotoSansKR;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 6px;
+    background: #000;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-moz-range-track {
+    background: #000; 
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff; 
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff; 
+    cursor: pointer;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #fff 0%, #fff var(--value), #000 var(--value), #000 100%);
+}
+
+input[type="range"]::-moz-range-progress {
+    background: #fff; 
+}
+
+
+
+.control-item {
+    margin-bottom: 10px;
+    width: 30vw;
+    height: 5vh;
+}
+
+.slider {
+    width: 100%;
+}
+
+.namelabel-container {
+    width: 50vw;
+    height: 55vh;
+    left: 0;
+    bottom: 0;
+    background-color: black; /* 검은 배경 복원 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* 3D 효과를 위한 원근 추가 */
+}
+
+.nametag {
+    width: 40vw; /* 원래 명함 크기로 복원 */
+    height: 32vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.nametag2 {
+    width: 40vw; /* 원래 명함 크기로 복원 */
+    height: 32vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.nametag, .nametag2 {
+  transform-origin: center center;
+}
+
+.popup, .nametag-container {
+  perspective: 1000px; /* 동일한 값으로 맞추기 */
+}
+
+#nametag-text {
+    font-size: 1.5rem;
+    line-height: 5rem;
+    color: black;
+    transition: all 0.2s ease;
+    font-family: "Instrument Serif", serif;
+}
+
+.popup {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 팝업 속 명함 스타일 */
+/* 팝업 창 기본 스타일 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 팝업 내부 컨텐츠 스타일 */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 닫기 버튼 스타일 */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 팝업 내부 명함 스타일 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 팝업 내부 컨텐츠 스타일 */
+.popup-content {
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    width: 60vw; /* 팝업 크기 확대 */
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 닫기 버튼 스타일 */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 팝업 내부 명함 모양 */
+..popup-nametag {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.popup-namelabel-container {
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-nametag-text {
+    font-size: 3rem; /* 텍스트 크기 확대 */
+    color: white; /* 텍스트 색상 */
+    text-align: center;
+    font-family: "Instrument Serif", serif;
+    transition: all 0.2s ease;
+}
+
+/* 팝업을 여는 버튼 스타일 */
+#popup-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    font-family: "Instrument Serif";
+    font-style: italic;
+}
+
+#popup-button:hover {
+    background-color: #555;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.button-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#background-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-family: "Instrument Serif";
+    font-style: italic;
+}
+
+#save-button {
+    background-color: #008CBA; /* Blue */
+    color: white;
+    font-family: "Instrument Serif";
+    font-style: italic;
+}
+
+.button-container button:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+}
